@@ -1,4 +1,4 @@
-#Questão 6 refazer
+#Questão 6 
 dia1 = int(input("Dia "))
 hora1, minuto1, segundo1 = input().split(" : ")
 hora1 = int(hora1)
