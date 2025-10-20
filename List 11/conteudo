@@ -1,0 +1,5 @@
+Dicionario = {} //permite outros tipos de valores, nao apenas alfanumericos
+No dicionario podemos personalizar o índice
+
+Chamamos o índice de chave e o conteúdo de valor
+= {chave:valor}
