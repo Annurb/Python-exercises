@@ -19,3 +19,4 @@ l = list(map(int, input().split()))
 l = verifica_entrada(l, n)
 multiplos = verifica_multiplos(l)
 print(multiplos)
+
