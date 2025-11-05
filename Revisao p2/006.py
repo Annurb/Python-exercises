@@ -23,7 +23,6 @@ def quantos_dias(fita, f, dias):
         dias+=1
         return dias
 
-
 f, r = map(int, input().split())
 
 gotas = list(map(int, input().split()))
