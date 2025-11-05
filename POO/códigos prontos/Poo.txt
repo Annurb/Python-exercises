@@ -1,0 +1,39 @@
+4 pilares do POO:
+Criamos uma classe com atributos e depois usamos métodos para cadastrar 
+
+1- Abstração
+Identidade única de um objeto
+Propriedades do objeto(características)
+
+2- Encapsulamento
+Adiciona segurança à aplicação, esconde as propriedades(criando uma espécie de caixa preta)
+
+3- Herança 
+Reusibilidade do código
+
+4- Polimorfismo
+ Permite herdar um método da classe pai
+
+
+O que e um objeto?
+Algo que possui caracteristicas, comportamento e estado em um determinado momento
+
+Caracteristica:
+O que e o objeto
+
+Comportamento:
+O que faz?
+
+Estado:
+Como esta?
+
+exemplo:
+Classe:
+Automóvel
+
+Atributos:
+Placa, cor, motor
+
+Estado:
+acelerar()
+Frear()
