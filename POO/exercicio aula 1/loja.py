@@ -9,4 +9,8 @@ class Loja_de_roupas:
     
     def consulta_quantidade(self):
         return self.quantidade
+    def estoque(self, num):
+        self.quantidade = quantidade - num
+        return self.quantidade
+
 

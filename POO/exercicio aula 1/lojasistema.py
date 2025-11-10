@@ -15,4 +15,6 @@ while True:
         print(lista[c].nome)
         print(lista[c].consulta_preco())
         print(lista[c].consulta_quantidade())
+    compra, quantidade = input("Deseja comprar qual produto? E qual a quantidade?").split()
+    comprar = compra.estoque(compra, quantidade)
 
