@@ -17,7 +17,7 @@ while True:
         verifica = float(input("Digite a carga: "))
 
         veiculo.verificar_carga(verifica)
-        veiculo = Caminhao(marca, modelo, ano, carga)
+        
     else: 
         veiculo = Veiculo(marca, modelo, ano)
     lista.append(veiculo)
