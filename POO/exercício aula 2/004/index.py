@@ -1,3 +1,8 @@
+from animal import Animal
+from vip import Vip
+
+lista = [] 
+
 while True:
     continua = input("Deseja continuar? ").upper()
     if continua[0] == "N":
@@ -19,9 +24,38 @@ while True:
         raca = str(input("Insira a raça: ")).upper()
         pelo = str(input("Insira a cor do pelo: "))
         
-        isvip = input("O cliente é VIP? ").lower()
-        if isvip == "s":
-            alimentacao = str("Insira a restrição alimentar: ")
-            banho = int("Periodicidade do banho: ")
+        isvip = str(input("O cliente é VIP? ").lower())
+        if isvip[0] == "s":
+            alimentacao = bool(input("Restrição alimentar"))
+            banho = int(input("Periodicidade do banho: "))
             animal = Vip(nome, idade, peso, dono, raca, pelo, alimentacao, banho)
+        else:
+            animal = Animal(nome, idade, peso, dono, raca, pelo)
+
+        lista.append(animal)
+
+        animal.imprimir_informacao()
+
+    elif cadastro == 2:
+        print("Escolha uma opção:")
+        imprimir = int(input("1- Imprimir um cliente específico\n2 - Imprimir todos os clientes\n"))
+        if imprimir == 1:
+            clientespecifico = input("Digite o nome do cliente: ").upper()
+            for classe in lista:
+                if classe.getNome() == clientespecifico:
+                    classe.imprimir_informacao()
         
+        else:
+            for classe in lista:
+                classe.imprimir_informacao()
+
+    elif cadastro == 3:
+        nomedocao = input("Digite o nome do cliente: ").upper()
+        for classe1 in lista:
+            if classe1.getNome() == nomedocao:
+                classe1.restricao_alimentar()
+    else: 
+        animal.cachorro_idoso()
+            
+
+
