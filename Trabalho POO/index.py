@@ -34,7 +34,7 @@ while True:
         for d in range(len(noticiatitulo)):
             if opcao == d+1:
                 noticiageral[d].imprimir_noticia()
-                
+
     if menu == 5:
         break
 
