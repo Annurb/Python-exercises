@@ -1,4 +1,3 @@
-
 def solveNQueens(n):
     solutions = []
     board = [["."] * n for _ in range(n)]
@@ -39,7 +38,7 @@ def solveNQueens(n):
     return solutions
 
 # Example for N=4
-for sol in solveNQueens(4):
+for sol in solveNQueens(6):
     for row in sol:
         print(row)
     print()
