@@ -1,19 +1,30 @@
 
 class Cliente:
-    def __init__(self, id, nome, endereco, telefone):
-        self.id = id
+    def __init__(self, nome, cpf, telefone):
         self.nome = nome
-        self.endereco = endereco
+        self.cpf = cpf
         self.telefone = telefone
 
-    def atualizar(self, id, nome, endereco, telefone):
-        self.id = id
+    def getNome(self):
+        return self.nome
+
+    def atualizar(self, nome, cpf, telefone):
         self.nome = nome
-        self.endereco = endereco
+        self.cpf = cpf
         self.telefone = telefone
+
+    def getCPF(self):
+        return self.cpf
 
     def exibirInformacoes(self):
-        print(f"id: {self.id}\nNome: {self.nome}\nEndereço: {self.endereco}\nTelefone: {self.telefone}")
-    
+        print(f"\nNome: {self.nome}\nCPF: {self.cpf}\nTelefone: {self.telefone}")
 
+    def isVip(self):
+        return "Não"
     
+class ClienteVip(Cliente):
+    def __init__(self, nome, cpf, telefone):
+        super().__init__(nome, cpf, telefone)
+
+    def isVip(self):
+        return "Sim"
