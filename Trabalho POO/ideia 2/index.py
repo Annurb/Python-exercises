@@ -1,18 +1,23 @@
 import livro
 import cliente
 import random
+import labels
 
 #livros
 listaDeLivros = []
 l1 = livro.Livro( "O Ceifador (Físico)", "Neil Shursterman", "Distopia", 50, 3)
-l2 = livro.Livro("A empregada (Luxo)", "Freida McFadden", "Suspense", 40, 0 )
+base = livro.Livro("A empregada", "Freida McFadden", "Suspense", 30, 0)
+l2 = livro.LivroFisicoLuxo("A empregada (Luxo)", base, 40, 1)
+l3 = livro.Ebook("A empregada (Ebook)", base, 12)
 
 listaDeLivros.append(l1)
 listaDeLivros.append(l2)
+listaDeLivros.append(base)
+listaDeLivros.append(l3)
 
 #Clientes
 listaDeClientes = []
-c1 = cliente.ClienteVip("Vitoria", "Rua 12", 63987652334)
+c1 = cliente.ClienteVip("Vitoria", 787924948, 63987652334)
 listaDeClientes.append(c1)
 
 #Menu
@@ -77,6 +82,10 @@ while True:
             for f in range(len(listaDeClientes)):
                 if listaDeClientes[f].getNome().lower() == nome.lower():
                     listaDeClientes[f].atualizar( nome, cpf, telefone)
+                    break
+
+            print("Cliente atualizado")
+            listaDeClientes[f].exibirInformacoes()
         else:
             print("Clientes VIP possuem frete GRATIS")
             vip = str(input("Deseja ser VIP? ")).upper()
@@ -168,6 +177,7 @@ while True:
             formaDePagamento = int(input())
 
             if formaDePagamento == 1:
+                labels.formaPix()
                 escolha_possivel = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
                 chave_pix = ''
 
@@ -196,6 +206,5 @@ while True:
                 print("Pagamento aprovado")
    
             pagamento.imprimirVenda()
-              
     else:
         break

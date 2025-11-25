@@ -31,8 +31,8 @@ class Livro:
     def getNome(self):
         return self.titulo
 
-#Composição
-class LivroFisicoLuxo:
+
+class LivroFisicoLuxo(Livro):
     def __init__(self, titulo, livroBase: Livro, precoLuxo, luxo):
         self.titulo = titulo
         self.autor = livroBase.autor
@@ -43,6 +43,24 @@ class LivroFisicoLuxo:
     def exibirDetalhes(self):
         print(f"\nTítulo: {self.titulo}\nTipo: edição de luxo\nAutor: {self.autor}\nGênero: {self.genero}\nPreço: R${self.preco}\nQuantidade em estoque: {self.quantidadeEstoque}")
 
+    def adicionarEstoque(self, quantidade):
+        self.quantidadeEstoque += quantidade
+
+    
+    def removerEstoque(self, quantidade):
+        if self.quantidadeEstoque>0:
+            self.quantidadeEstoque -= quantidade
+            return 1
+        else:
+            print("Este livro não tem mais no estoque")
+            return 0 
+        
+    def getPreco(self):
+        return self.preco
+    
+    def getNome(self):
+        return self.titulo
+
 class Ebook:
     def __init__(self,titulo, livroBase: Livro, precoEbook):
         self.titulo = titulo
@@ -52,6 +70,12 @@ class Ebook:
     
     def exibirDetalhes(self):
         print(f"\nTítulo: {self.titulo}\nTipo: ebook\nAutor: {self.autor}\nGênero: {self.genero}\nPreço: R${self.preco}")
+    
+    def getPreco(self):
+        return self.preco
+    
+    def getNome(self):
+        return self.titulo
 
 #Venda
 class Venda:

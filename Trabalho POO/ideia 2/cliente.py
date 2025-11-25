@@ -25,6 +25,9 @@ class Cliente:
 class ClienteVip(Cliente):
     def __init__(self, nome, cpf, telefone):
         super().__init__(nome, cpf, telefone)
+    
+    def exibirInformacoes(self):
+        print(f"\nNome: {self.nome}\nCPF: {self.cpf}\nTelefone: {self.telefone}\nCliente VIP com direito a frete grátis\n")
 
     def isVip(self):
         return "Sim"
